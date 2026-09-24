@@ -1,0 +1,6 @@
+dependencies:
+  idf: ">=5.3"
+  espressif/esp32-camera: "^2.0.15"
+  # PENDING INTEGRATION: on-device person detector (ESP-DL pedestrian_detect, 224x224,
+  # ~130 ms/inference on ESP32-S3 per Espressif's published benchmark).
+  # espressif/pedestrian_detect: "*"

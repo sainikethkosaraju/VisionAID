@@ -1,0 +1,40 @@
+# Secrets — never commit
+.env
+*.env.local
+nvs*.bin
+*.pem
+*.key
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# Runtime data (evidence is sensitive)
+var/
+backend/var/
+
+# ESP-IDF
+edge/esp32/firmware/build/
+edge/esp32/firmware/sdkconfig
+edge/esp32/firmware/sdkconfig.old
+edge/esp32/firmware/managed_components/
+edge/esp32/tests/host/test_runner
+
+# AI artefacts (datasets and weights are not stored in git)
+ai/data/
+ai/runs/
+*.pt
+*.onnx
+*.espdl
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+node_modules/
