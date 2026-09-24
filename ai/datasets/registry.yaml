@@ -1,0 +1,90 @@
+# VisionAID dataset registry.
+#
+# RULE: a dataset may enter training only when licence_status == "verified" AND its
+# licence permits the intended use. Most academic fall datasets are research-only;
+# commercial model training on them is a legal risk until confirmed in writing.
+#
+# Figures are from the OmniFall benchmark paper (arXiv:2505.19889) unless noted, and
+# must be re-checked against each dataset's own publication before use.
+#
+# licence_status: unverified | verified | rejected
+# commercial_use: unknown | yes | no
+
+datasets:
+  - id: omnifall_labels
+    name: OmniFall (unified labels over 8 staged datasets + OOPS-Fall)
+    source: https://arxiv.org/abs/2505.19889 (hosted on Hugging Face)
+    licence: CC BY-SA 4.0 (labels only; underlying videos keep their own licences)
+    licence_status: unverified
+    commercial_use: unknown
+    classes: [fall, sit_down, lie_down, stand_up, fallen, sitting, lying, standing, walk, other]
+    notes: >-
+      Best available taxonomy for our problem: separates transient FALL from intentional
+      LIE_DOWN / SIT_DOWN and static FALLEN from LYING. Share-alike terms may affect
+      derived label sets.
+
+  - id: cmdfall
+    name: CMDFall
+    duration: 7h25m
+    subjects: 50
+    views: 7 synchronised
+    licence_status: unverified
+    commercial_use: unknown
+
+  - id: up_fall
+    name: UP-Fall Detection
+    duration: 4h37m
+    subjects: 17
+    views: 2 synchronised
+    licence_status: unverified
+    commercial_use: unknown
+
+  - id: le2i
+    name: Le2i Fall Detection
+    duration: 51m
+    subjects: 9
+    views: 6 rooms
+    licence_status: unverified
+    commercial_use: unknown
+
+  - id: gmdcsa24
+    name: GMDCSA-24
+    source: https://doi.org/10.1016/j.dib.2024.110892 (Data in Brief)
+    duration: 21m
+    subjects: 4
+    views: 3 home setups
+    licence_status: unverified
+    commercial_use: unknown
+    notes: Low-resolution webcam (0.92 MP) — closest to our sensor/compute envelope.
+
+  - id: caucafall
+    name: CAUCAFall
+    duration: 16m
+    subjects: 10
+    views: 1
+    licence_status: unverified
+    commercial_use: unknown
+
+  - id: oops_fall
+    name: OOPS-Fall (curated from OOPS)
+    notes: Only real (unstaged) falls in the collection; in-the-wild, not elderly care.
+    licence_status: unverified
+    commercial_use: unknown
+
+  - id: older_adults_falls
+    name: '"Older Adults Falls Dataset" (as named in product spec)'
+    licence_status: unverified
+    commercial_use: unknown
+    notes: >-
+      Could not be identified unambiguously — no canonical public dataset by this exact
+      name was found. Owner to supply the source URL before evaluation.
+
+  - id: visionaid_staged
+    name: VisionAID staged capture on DFR1154 (to be collected)
+    licence_status: verified
+    commercial_use: yes
+    notes: >-
+      Required. Public data is staged by young actors on other cameras; none uses a 160°
+      fisheye at ceiling-corner height. Collect with consenting actors (incl. stunt-trained
+      older-adult actors and physiotherapist guidance), the production camera, mounting
+      and IR night mode, plus ADL recordings (bed entry/exit, sitting, kneeling, bending).

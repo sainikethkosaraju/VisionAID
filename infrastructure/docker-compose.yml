@@ -1,0 +1,29 @@
+# Local development stack. Secrets come from ../.env (never committed).
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: visionaid
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: visionaid
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U visionaid"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: ../backend
+    depends_on:
+      postgres: {condition: service_healthy}
+    environment:
+      VISIONAID_DATABASE_URL: postgresql+psycopg://visionaid:${POSTGRES_PASSWORD}@postgres:5432/visionaid
+      VISIONAID_JWT_SECRET: ${VISIONAID_JWT_SECRET:?set VISIONAID_JWT_SECRET in .env}
+      VISIONAID_EVIDENCE_KEY: ${VISIONAID_EVIDENCE_KEY:-}
+      VISIONAID_EVIDENCE_DIR: /srv/var/evidence
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: [evidence:/srv/var/evidence]
+
+volumes:
+  pgdata:
+  evidence:
