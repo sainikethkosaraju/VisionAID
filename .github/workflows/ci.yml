@@ -32,7 +32,7 @@ jobs:
     env:
       VISIONAID_TEST_DATABASE_URL: postgresql+psycopg://visionaid:visionaid@localhost:5432/visionaid_test
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -53,14 +53,14 @@ jobs:
   edge-host-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: make -C edge/esp32/tests/host
 
   firmware-build:
     runs-on: ubuntu-latest
     container: espressif/idf:v5.4.2
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Build for esp32s3
         shell: bash
         working-directory: edge/esp32/firmware
@@ -72,7 +72,7 @@ jobs:
   ai:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
