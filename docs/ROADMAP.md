@@ -21,7 +21,7 @@ Legend: ✅ done · 🟡 partial · ⬜ not started
 | 14 Pilot preparation | ⬜ | — | DPIA, consent pack, install runbook, 1 facility / 5 rooms / 8 weeks |
 
 ## Immediate next steps (in order)
-1. **Owner:** supply the "Adwith red" value and the source of the "Older Adults Falls Dataset"; confirm hardware is on hand.
+1. **Owner:** choose the brand primary colour and confirm the source of the "Older Adults Falls Dataset"; confirm hardware is on hand.
 2. Hardware bring-up + frame-size measurement (days, not weeks — unblocks everything on the edge).
 3. Integrate ESP-DL `pedestrian_detect`; measure latency and PSRAM; record first real bbox trajectories.
 4. Staged-fall + ADL capture session on the DFR1154 (consented) → first real evaluation of the trigger.

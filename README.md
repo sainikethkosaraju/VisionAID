@@ -1,5 +1,7 @@
 # VisionAID
 
+[![CI](https://github.com/sainikethkosaraju/VisionAID/actions/workflows/ci.yml/badge.svg)](https://github.com/sainikethkosaraju/VisionAID/actions/workflows/ci.yml)
+
 **AI-assisted safety and incident-alert platform for elderly care facilities.**
 First sensor: DFRobot ESP32-S3 AI Camera (DFR1154). First capability: fall detection. First interface: caregiver app.
 

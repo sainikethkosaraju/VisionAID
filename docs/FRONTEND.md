@@ -20,7 +20,7 @@
 
 ## Design system
 - Semantic colours: RED critical · ORANGE warning · BLUE info/technology · GREEN safe/resolved · NAVY system/trust · off-white content · greys secondary. State is **never colour-only**: icon + label + shape.
-- **Brand primary "Adwith red": exact value needed.** It could not be identified as a standard named colour. Until supplied, tokens reference `--brand-primary` with a placeholder, and brand red is kept distinct from the semantic *critical* red so an alert never looks like decoration.
+- **Brand primary colour: to be chosen.** Tokens reference `--brand-primary` with a placeholder, and the brand colour is kept distinct from the semantic *critical* red so an alert never looks like decoration.
 - Typography: large numerals for counts/timers; minimum 16 px body; 44×44 pt touch targets (48 dp Android).
 - Light and dark mode (night shifts); WCAG 2.2 AA contrast minimum; screen-reader labels on every state.
 - Motion only to signal change (new incident), respecting reduced-motion.
